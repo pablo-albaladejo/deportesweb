@@ -26,7 +26,7 @@ const apiFetch =
           ...defaultHeaders,
           ...headers,
         },
-        body: body ? JSON.stringify(body) : null,
+        body: body ? JSON.stringify(body) : null
       };
 
       const urlParms = params ?

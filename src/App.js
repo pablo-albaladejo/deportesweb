@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import apiFetch, { FETCH_METHODS } from './utils/apiFetch';
 
 const API_URL = `https://deportesweb.madrid.es/CronosWebApi/api/v1`
+const CORS_ANYWHERE = `https://ancient-forest-84722.herokuapp.com`
+const BASE_URL = `${CORS_ANYWHERE}/${API_URL}`
 
 function App() {
   const [centers, setCenters] = useState()
@@ -9,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchCenters = async () => {
       const result = await apiFetch({
-        baseUrl: API_URL,
+        baseUrl: BASE_URL,
         endPoint: `/events/enclosures/29/2021-03-29?session_token=`,
         method: FETCH_METHODS.GET,
         headers: {
@@ -18,6 +20,7 @@ function App() {
           'Connection': 'Keep-Alive',
           'Accept-Encoding': 'gzip',
           'cache-control': 'no-cache',
+          'Access-Control-Allow-Origin': '*',
         }
       })
       setCenters(result)
