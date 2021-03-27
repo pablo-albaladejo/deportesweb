@@ -1,6 +1,6 @@
 
-const FacilityPreview = ({ code, name, address, logo }) => (
-  <div onClick={() => alert(code)} style={{
+const FacilityPreview = ({ code, name, address, logo, onSelect }) => (
+  <div onClick={() => onSelect(code)} style={{
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: 'silver',
