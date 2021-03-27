@@ -10,14 +10,13 @@ export const FETCH_METHODS = {
 };
 
 const apiFetch =
-  ({ baseUrl, endPoint, method, token = null, body = null, params = null, headers = null }) =>
+  ({ baseUrl, endPoint, method, body = null, params = null, headers = null }) =>
     new Promise((resolve, reject) => {
       const isDev = process.env.NODE_ENV === 'development';
 
       const defaultHeaders = {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        //Authorization: token,
       };
 
       const opts = {
