@@ -30,7 +30,7 @@ function FacilityPage() {
       setInfo(result[0])
     }
     fetchCenters()
-  }, [])
+  }, [code])
 
   return (
     <>
